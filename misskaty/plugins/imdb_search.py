@@ -419,7 +419,7 @@ async def imdb_id_callback(self: Client, query: CallbackQuery):
                     .find(class_="ipc-metadata-list-item__content-container")
                     .text
                 )
-                res_str += f"<b>Durasi:</b> <code>{(await gtranslate(durasi), "auto", "id").text}</code>\n"
+                 res_str += f"<b>Durasi:</b> <code>{(await gtranslate(durasi, "auto", "id")).text}</code>\n"
             if kategori := r_json.get("contentRating"):
                 res_str += f"<b>Kategori:</b> <code>{kategori}</code> \n"
             if rating := r_json.get("aggregateRating"):
